@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>practise</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <style>
+    #SomeElementYouWantToAnimate {
+      width: 100px;
+      height: 100px;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+
+<body>
+<div id="SomeElementYouWantToAnimate"></div>
+<script>
+  var start = null;
+  var element = document.getElementById('SomeElementYouWantToAnimate');
+  element.style.position = 'absolute';
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    var progress = timestamp - start;
+    element.style.left = Math.min(progress / 10, 300) + 'px';
+    if (progress < 3000) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
+</script>
+</body>
+</html>

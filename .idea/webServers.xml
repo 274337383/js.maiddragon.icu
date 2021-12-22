@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cdcc02e9-0f92-4104-a6cb-0e123c96b10e" name="143" url="http://192.168.76.143">
+        <fileTransfer host="192.168.76.143" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="b87227c1-0dac-4ca9-8e74-43a8e528fe08" name="maiddragon.icu" url="http://maiddragon.icu">
+        <fileTransfer host="maiddragon.icu" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="bcc294e4-cd7e-4747-9826-e32978714e5d" name="maiddragon.top" url="http://maiddragon.top">
+        <fileTransfer host="maiddragon.top" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="b9b5331b-2309-4a91-9138-f5e49efbc1c7" name="192.168.76.179" url="http://192.168.76.179">
+        <fileTransfer host="192.168.76.179" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

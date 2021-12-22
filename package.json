@@ -1,0 +1,11 @@
+{
+  "name": "maiddragon.icu",
+  "version": "1.0.0",
+  "email": "274337383@qq.com",
+  "author": "AKO",
+  "homepage": "https://maiddragon.icu",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql": "^2.18.1"
+  }
+}
