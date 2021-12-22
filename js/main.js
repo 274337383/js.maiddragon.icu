@@ -1,4 +1,34 @@
-buf = Buffer.from('abcdefg');
-buf2 = buf.slice(0, buf.length-1);
+const http = require("http");
+const url = require('url');
+const {exit} = require("process");
+const events = require('events');
 
-console.log(buf2.toString())
+// 创建 eventEmitter 对象
+const eventEmitter = new events.EventEmitter();
+
+// route 根路径
+eventEmitter.on('/', function (method, response) {
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.end('Hello World\n');
+});
+
+// route 404
+eventEmitter.on('404', function (method, url, response) {
+    response.writeHead(404, {'Content-Type': 'text/plain'});
+    response.end('404 Not Found\n');
+});
+
+// 启动服务
+http.createServer(function (request, response) {
+    console.log(request.url);
+
+    // 分发
+    if (eventEmitter.listenerCount(request.url) > 0) {
+        eventEmitter.emit(request.url, request.method, response);
+    } else {
+        eventEmitter.emit('404', request.method, request.url, response);
+    }
+
+}).listen(8888);
+
+console.log('Server running at http://127.0.0.1:8888/');
