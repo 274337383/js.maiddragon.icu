@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://maiddragon.icu:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="@maiddragon.icu [2]" uuid="7e59e2fb-a1f2-4ac3-81cc-05c32f6ebd19">
+      <driver-ref>mongo</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
+      <jdbc-url>mongodb://maiddragon.icu:27017</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

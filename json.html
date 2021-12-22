@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页</title>
+    <!--    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <link rel="icon" href="images/favicon.gif" type="image/gif">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .box {
+            display: block;
+            background-color: #c4c4c4;
+            width: 298px;
+            height: 415px;
+            margin: 100px auto;
+        }
+
+        .box img {
+            width: 100%;
+        }
+
+        .review {
+            height: 70px;
+            font-size: 14px;
+            font-family: 等线, serif;
+            color: #000000;
+            padding: 0 28px;
+            margin-top: 30px;
+        }
+
+        .git {
+            display: block;
+            height: 60px;
+            width: 60px;
+            margin-left: 15px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("images/github.png");
+            transition: all 2s;
+        }
+
+        .git:hover {
+            transform: rotateY(360deg);
+            background-image: url("images/github(while).png");
+        }
+
+        input[type="submit"] {
+            background: url("images/github(while).png") no-repeat center;
+            width: 200px; /* width of image */
+            height: 50px; /* height of image */
+            border: 0;
+        }
+    </style>
+</head>
+<body onload="checkCookie();welDay()">
+<div class="box">
+    <img src="images/1(low).jpg" alt="">
+    <form action="php/test.php" method="post">
+        <label>
+            用户名:
+            <input type="text" name="username">
+            <br>
+            密码:
+            <input type="text" name="password">
+        </label>
+        <br>
+        <input type="submit">
+    </form>
+    <a href="https://github.com/274337383" class="git"></a>
+    <script src="js/index.js">
+        // function welDay() {
+        //     let x;
+        //     const d = new Date().getDay();
+        //     switch (d) {
+        //         case 0:
+        //             x = "明天要去学校了";
+        //             break;
+        //         case 1:
+        //             x = "离放假还有4天";
+        //             break;
+        //         case 2:
+        //             x = "离放假还有3天";
+        //             break;
+        //         case 3:
+        //             x = "离放假还有2天";
+        //             break;
+        //         case 4:
+        //             x = "离放假还有1天";
+        //             break;
+        //         case 5:
+        //             x = "今天就要放假了";
+        //             break;
+        //         case 6:
+        //             x = "好耶";
+        //             break;
+        //     }
+        //
+        //     document.getElementById("welcome").innerHTML = x;
+        // }
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function getCookie(cname) {
+            const name = cname + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                const c = ca[i].trim();
+                if (c.indexOf(name) === 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            let user = getCookie("username");
+            if (user !== "") {
+                alert("欢迎 " + user + " 再次访问");
+            } else {
+                user = prompt("请输入你的名字:", "");
+                if (user !== "" && user != null) {
+                    setCookie("username", user, 30);
+                }
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
