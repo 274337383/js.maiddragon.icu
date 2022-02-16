@@ -50,12 +50,43 @@
             transform: rotateY(360deg);
             background-image: url("images/github(while).png");
         }
+
+        .top {
+            display: block;
+            height: 60px;
+            border-top: 3px solid rgb(255 127 41);
+            border-bottom: 1px solid rgb(224 158 115);
+            background-color: #939393;
+            line-height: 43px;
+        }
+
+        .top a {
+            display: inline-block;
+            height: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 17px;
+            font-family: 等线,serif;
+            color: black;
+            text-decoration: none;
+        }
+        .top a:hover {
+            color: white;
+            background-color: rgb(255 127 41);
+        }
     </style>
 </head>
 <body onload="checkCookie();welDay()">
+<div class="top">
+    <a href="#">Fumo主页</a>
+    <a href="#">现货</a>
+    <a href="https://blog.maiddragon.icu">Blog</a>
+    <a href="#">关于我们</a>
+    <a href="#">Release</a>
+</div>
 <div class="box">
     <img src="images/1(low).jpg" alt="">
-    <p class="review" id="welcome">你好，来到我的网站</p>
+    <p class="review" id="welcome">你好，欢迎来到我的网站</p>
     <a href="https://github.com/274337383" class="git"></a>
     <script src="js/index.js">
         function welDay() {
